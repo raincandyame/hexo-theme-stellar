@@ -26,7 +26,7 @@ sidebar:
   # Sidebar widgets
   widgets:
     # default layout in home/wiki/categories/tags/archives pages
-    default_layout: [welcome]
+    default_layout: [recent]
     # Recent update
     recent:
       layout: recent
@@ -39,20 +39,20 @@ sidebar:
       min_depth: 2
       max_depth: 5
       fallback: recent # Use a backup widget when toc does not exist.
-    # welcome
-    welcome:
-      layout: markdown
-      title: Stellar 入门指南
-      content:
-        - '欢迎使用 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar/) 主题，下面是您的入门指南，祝您使用愉快！'
-        - '<br>'
-        - '**第一步**'
-        - '创建 `blog/_config.stellar.yml` 文件，在此文件中填写需要自定义的主题配置。'
-        - '<br>'
-        - '**第二步**'
-        - '创建 `blog/source/_data/widgets.yml` 文件，此文件中填写需要自定义的侧边栏组件，例如 `welcome` 组件。'
-        - '<br>'
-        - '如果有任何疑问，请先查阅[文档](https://xaoxuu.com/wiki/stellar/)，如果文档中没有提供，请提 [issue](https://github.com/xaoxuu/hexo-theme-stellar/issues/) 向开发中询问。'
+    # welcome (broken)
+    # welcome:
+    #   layout: markdown
+    #   title: Stellar 入门指南
+    #   content:
+    #     - '欢迎使用 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar/) 主题，下面是您的入门指南，祝您使用愉快！'
+    #     - '<br>'
+    #     - '**第一步**'
+    #     - '创建 `blog/_config.stellar.yml` 文件，在此文件中填写需要自定义的主题配置。'
+    #     - '<br>'
+    #     - '**第二步**'
+    #     - '创建 `blog/source/_data/widgets.yml` 文件，此文件中填写需要自定义的侧边栏组件，例如 `welcome` 组件。'
+    #     - '<br>'
+    #    - '如果有任何疑问，请先查阅[文档](https://xaoxuu.com/wiki/stellar/)，如果文档中没有提供，请提 [issue](https://github.com/xaoxuu/hexo-theme-stellar/issues/) 向开发中询问。'
 
 
 
@@ -125,9 +125,7 @@ comments:
       mail: "邮箱（必填，完全保密）"
       link: "网址(https://)"
     master: #md5加密后的博主邮箱
-      - 6783037F2DF30EAB99F9FC256157D875
     friends: #md5加密后的小伙伴邮箱
-      - 6783037F2DF30EAB99F9FC256157D875
   # Twikoo
   # https://twikoo.js.org/
   twikoo:
@@ -181,11 +179,11 @@ tag_plugins:
   checkbox:
     interactive: false # enable interactive for user
   emoji:
-    default: https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/qq/%s.gif
-    twemoji: https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/%s.svg
-    qq: https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/qq/%s.gif
+    default: https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/%s.gif
+    #Wtwemoji: https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/%s.svg
+    #qq: https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/qq/%s.gif
     aru: https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/%s.gif
-    tieba: https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%s.png
+    #tieba: https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%s.png
 
 
 ######## JS Plugins ########
@@ -223,12 +221,23 @@ plugins:
 
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
-    enable: #true
+    enable: true
     js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js
     distance: 8px
     duration: 500 # ms
     interval: 100 # ms
     scale: 1 # 0.1~1
+  # mathjax support
+  # https://github.com/next-theme/hexo-filter-mathjax
+  # INSTALL IT FIRST: npm install hexo-filter-mathjax
+  # Consider using hexo-renderer-pandoc instead of hexo-renderer-marked
+  mathjax:
+    tags: none # 或 'ams' 或 'all'
+    single_dollars: true # 启用单个美元符号作为内联（行内）数学公式定界符
+    cjk_width: 0.9 # 相对 CJK 字符宽度
+    normal_width: 0.6 # 相对正常（等宽）宽度
+    append_css: true # 将 CSS 添加到每个页面
+    every_page: false # 如果为 true，那么无论每篇文章的前题中的 `mathjax` 设置如何，每页都将由 mathjax 呈现
 
 style:
   darkmode: auto # auto / always / false
