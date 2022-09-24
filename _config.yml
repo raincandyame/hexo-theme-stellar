@@ -117,7 +117,7 @@ comments:
     pageSize: 10 # comment list page size
     lang: zh-cn
     highlight: true
-    mathJax: false
+    mathJax: true
     tagMeta: [博主, 小伙伴, 访客] # 标签要显示的文字,默认'博主,小伙伴,访客'
     metaPlaceholder:
       nick: "昵称/QQ号(必填)"
@@ -236,7 +236,7 @@ plugins:
     cjk_width: 0.9 # 相对 CJK 字符宽度
     normal_width: 0.6 # 相对正常（等宽）宽度
     append_css: true # 将 CSS 添加到每个页面
-    every_page: false # 如果为 true，那么无论每篇文章的前题中的 `mathjax` 设置如何，每页都将由 mathjax 呈现
+    every_page: true # 如果为 true，那么无论每篇文章的前题中的 `mathjax` 设置如何，每页都将由 mathjax 呈现
 
 style:
   darkmode: auto # auto / always / false
